@@ -1,0 +1,16 @@
+{
+	"name": "AzureTable1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "testTableStorgeLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "testTable"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}

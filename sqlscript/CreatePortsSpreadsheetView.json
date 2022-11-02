@@ -1,0 +1,17 @@
+{
+	"name": "CreatePortsSpreadsheetView",
+	"properties": {
+		"content": {
+			"query": "DROP VIEW IF EXISTS vesselsSpreadsheet;\nGO\n\nCREATE VIEW vesselsSpreadsheet AS\nSELECT * FROM OPENROWSET(\n    BULK 'https://datacourseworkspace.blob.core.windows.net/datacoursefilesys/testfile.parquet',\n    FORMAT = 'PARQUET'\n) as ports",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "PortsDBTest",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

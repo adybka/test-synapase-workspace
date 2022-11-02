@@ -1,0 +1,17 @@
+{
+	"name": "compare querying formats",
+	"properties": {
+		"content": {
+			"query": "select top 40 * from dbo.vesselsSpreadsheet\n/*comment*/\nSELECT top 40 * FROM OPENROWSET(\n    BULK 'https://datacourseworkspace.blob.core.windows.net/datacoursefilesys/testfile.parquet',\n    FORMAT = 'PARQUET'\n) as ports",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "PortsDBTest",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

@@ -1,0 +1,17 @@
+{
+	"name": "Storage-External-Container-Connection",
+	"properties": {
+		"content": {
+			"query": "-- Create Database\nCREATE DATABASE hopadbserverless\n\n-- Create data source\n-- create master key that will protect the credentials:\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = 'sknfd#isfnasdkf!bsk1';\n\n-- create credentials for containers in our demo storage account\nCREATE DATABASE SCOPED CREDENTIAL hopacredential\nWITH IDENTITY='SHARED ACCESS SIGNATURE',  \nSECRET = 'sv=2021-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2022-09-06T23:40:44Z&st=2022-09-06T15:40:44Z&spr=https&sig=%2BP9XyK3Q5t6FsrWovez20bs1tRTUjzKRqJaE0F1vyDk%3D'\nGO\nCREATE EXTERNAL DATA SOURCE TestStorage WITH (\n    LOCATION = 'https://datacourseworkspace.file.core.windows.net',\n    CREDENTIAL = hopacredential\n);\nGO",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "TestHopaDB",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

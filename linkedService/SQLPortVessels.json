@@ -1,0 +1,17 @@
+{
+	"name": "SQLPortVessels",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"connectionString": "integrated security=True;data source=localhost;initial catalog=PORTS_HamiltonON",
+			"userName": "INOVEX-HQ\\Andrew.Dybka",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiI3N2ZmOTE4YS04N2ExLTRlMmQtODQzYy0xMzY4OTc0MDQyMTAiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "Localhostruntime",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

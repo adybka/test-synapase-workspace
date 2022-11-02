@@ -1,0 +1,12 @@
+{
+	"name": "TestAzureLink",
+	"type": "Microsoft.Synapse/workspaces/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "PowerBIWorkspace",
+		"typeProperties": {
+			"workspaceID": "TestAzureLink",
+			"tenantID": "05d46a83-ee68-4d8c-9a1a-398f317c5af4"
+		}
+	}
+}

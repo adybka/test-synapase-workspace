@@ -1,0 +1,923 @@
+{
+	"name": "CopyToParquet",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "Schedule No.",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ScheduleNo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Vessel Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "VesselName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Flag",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Flag",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "GRT",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "GRT",
+									"type": "Single",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Country",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LastCountry",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Last Port",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "LastPort",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Next Country",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "NextCountry",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Next Port",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "NextPort",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Berth",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "Berth",
+									"type": "String",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Import/Export",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ImportExport",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Arrival Date",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "ArrivalDate",
+									"physicalType": "INT_96"
+								}
+							},
+							{
+								"source": {
+									"name": "Depature Date",
+									"type": "DateTime",
+									"physicalType": "datetime"
+								},
+								"sink": {
+									"name": "DepatureDate",
+									"physicalType": "INT_96"
+								}
+							},
+							{
+								"source": {
+									"name": "Harbour Dues Rate",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "HarbourDuesRate",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "Harbour Dues Billed",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "HarbourDuesBilled",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "Harbour Dues Posted",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "HarbourDuesPosted",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Harbour Dues Customer",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "HarbourDuesCustomer",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Is Berthage Billable",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "IsBerthageBillable",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthage Posted",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "BerthagePosted",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthage Customer",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BerthageCustomer",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthing Type",
+									"type": "String",
+									"physicalType": "nvarchar"
+								},
+								"sink": {
+									"name": "BerthingType",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthage Fee",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "BerthageFee",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "CargoLineNo",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "CargoLineNo",
+									"type": "Int32",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "BOL No.",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BOLNo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Group",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoGroup",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Government Class",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "GovernmentClass",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantity",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 12,
+									"precision": 25
+								},
+								"sink": {
+									"name": "Quantity",
+									"type": "Decimal",
+									"physicalType": "DECIMAL"
+								}
+							},
+							{
+								"source": {
+									"name": "Quantity Units",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "QuantityUnits",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Is Wharfage Billable",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "IsWharfageBillable",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Bill Wharfage To",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BillWharfageTo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Whaftage Customer No.",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "WhaftageCustomerNo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Wharfage Rate",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "WharfageRate",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Wharfage Total",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 12,
+									"precision": 25
+								},
+								"sink": {
+									"name": "WharfageTotal",
+									"physicalType": "DECIMAL"
+								}
+							},
+							{
+								"source": {
+									"name": "Is Throughput Billable",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "IsThroughputBillable",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Bill Throughput To",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BillThroughputTo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Throughput Cust No.",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ThroughputCustNo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Throughput Rate",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "ThroughputRate",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Throughput Total",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 12,
+									"precision": 25
+								},
+								"sink": {
+									"name": "ThroughputTotal",
+									"physicalType": "DECIMAL"
+								}
+							},
+							{
+								"source": {
+									"name": "Wharfage/Throughput Posted",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "WharfageThroughputPosted",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Bill By",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoBillBy",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Origin",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoOrigin",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Direction",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoDirection",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Throughput Tax",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "ThroughputTax",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Wharfage Tax",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "WharfageTax",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Memo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoMemo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Is Estimated",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "CargoIsEstimated",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Posted",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "CargoPosted",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Calculated Tonnage",
+									"type": "Decimal",
+									"physicalType": "decimal",
+									"scale": 12,
+									"precision": 25
+								},
+								"sink": {
+									"name": "CalculatedTonnage",
+									"physicalType": "DECIMAL"
+								}
+							},
+							{
+								"source": {
+									"name": "Terminal Operator",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "TerminalOperator",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthage Tax",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "BerthageTax",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "Harbour Dues Tax",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "HarbourDuesTax",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "Shipper Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ShipperName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Shipper City",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ShipperCity",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Shipper Country",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ShipperCountry",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Consignee Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ConsigneeName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Consignee City",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ConsigneeCity",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Consignee Country",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ConsigneeCountry",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Shipping Service Name",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "ShippingServiceName",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Measure",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "Measure",
+									"type": "Double",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Measure Units",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "MeasureUnits",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Throughput Discount",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "ThroughputDiscount",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Wharfage Discount",
+									"type": "Double",
+									"physicalType": "float"
+								},
+								"sink": {
+									"name": "WharfageDiscount",
+									"physicalType": "DOUBLE"
+								}
+							},
+							{
+								"source": {
+									"name": "Harbour Dues Discount",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "HarbourDuesDiscount",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthage Discount",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "BerthageDiscount",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "Sched Cargo Direction",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "SchedCargoDirection",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Berthing Cargo",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BerthingCargo",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Billable Pier",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "BillablePier",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "Vessel Type",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "VesselType",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Vessel Length",
+									"type": "Single",
+									"physicalType": "real"
+								},
+								"sink": {
+									"name": "VesselLength",
+									"physicalType": "FLOAT"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Origin Port Country",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoOriginPortCountry",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Origin Port City",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoOriginPortCity",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Destination Port Country",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoDestinationPortCountry",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Cargo Destination Port City",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "CargoDestinationPortCity",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Vessel Shipping Line",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "VesselShippingLine",
+									"physicalType": "UTF8"
+								}
+							},
+							{
+								"source": {
+									"name": "Home Based Vessel",
+									"type": "Boolean",
+									"physicalType": "bit"
+								},
+								"sink": {
+									"name": "HomeBasedVessel",
+									"physicalType": "BOOLEAN"
+								}
+							},
+							{
+								"source": {
+									"name": "IMO Number",
+									"type": "Int32",
+									"physicalType": "int"
+								},
+								"sink": {
+									"name": "IMONumber",
+									"physicalType": "INT_32"
+								}
+							},
+							{
+								"source": {
+									"name": "Berth Dept",
+									"type": "String",
+									"physicalType": "varchar"
+								},
+								"sink": {
+									"name": "BerthDept",
+									"physicalType": "UTF8"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "VesselsSpreed",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "Parquet1",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2022-09-08T18:15:22Z"
+	},
+	"type": "Microsoft.Synapse/workspaces/pipelines"
+}

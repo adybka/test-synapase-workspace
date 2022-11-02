@@ -1,0 +1,356 @@
+{
+	"name": "VesselsSpreed",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLPortVessels",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "Schedule No.",
+				"type": "varchar"
+			},
+			{
+				"name": "Vessel Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Flag",
+				"type": "varchar"
+			},
+			{
+				"name": "GRT",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "Last Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Last Port",
+				"type": "varchar"
+			},
+			{
+				"name": "Next Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Next Port",
+				"type": "varchar"
+			},
+			{
+				"name": "Berth",
+				"type": "varchar"
+			},
+			{
+				"name": "Import/Export",
+				"type": "varchar"
+			},
+			{
+				"name": "Arrival Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Depature Date",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "Harbour Dues Rate",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "Harbour Dues Billed",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "Harbour Dues Posted",
+				"type": "bit"
+			},
+			{
+				"name": "Harbour Dues Customer",
+				"type": "varchar"
+			},
+			{
+				"name": "Is Berthage Billable",
+				"type": "bit"
+			},
+			{
+				"name": "Berthage Posted",
+				"type": "bit"
+			},
+			{
+				"name": "Berthage Customer",
+				"type": "varchar"
+			},
+			{
+				"name": "Berthing Type",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Berthage Fee",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "CargoLineNo",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "BOL No.",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Group",
+				"type": "varchar"
+			},
+			{
+				"name": "Government Class",
+				"type": "varchar"
+			},
+			{
+				"name": "Quantity",
+				"type": "decimal",
+				"precision": 25,
+				"scale": 12
+			},
+			{
+				"name": "Quantity Units",
+				"type": "varchar"
+			},
+			{
+				"name": "Is Wharfage Billable",
+				"type": "bit"
+			},
+			{
+				"name": "Bill Wharfage To",
+				"type": "varchar"
+			},
+			{
+				"name": "Whaftage Customer No.",
+				"type": "varchar"
+			},
+			{
+				"name": "Wharfage Rate",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Wharfage Total",
+				"type": "decimal",
+				"precision": 25,
+				"scale": 12
+			},
+			{
+				"name": "Is Throughput Billable",
+				"type": "bit"
+			},
+			{
+				"name": "Bill Throughput To",
+				"type": "varchar"
+			},
+			{
+				"name": "Throughput Cust No.",
+				"type": "varchar"
+			},
+			{
+				"name": "Throughput Rate",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Throughput Total",
+				"type": "decimal",
+				"precision": 25,
+				"scale": 12
+			},
+			{
+				"name": "Wharfage/Throughput Posted",
+				"type": "bit"
+			},
+			{
+				"name": "Cargo Bill By",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Origin",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Direction",
+				"type": "varchar"
+			},
+			{
+				"name": "Throughput Tax",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Wharfage Tax",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Cargo Memo",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Is Estimated",
+				"type": "bit"
+			},
+			{
+				"name": "Cargo Posted",
+				"type": "bit"
+			},
+			{
+				"name": "Calculated Tonnage",
+				"type": "decimal",
+				"precision": 25,
+				"scale": 12
+			},
+			{
+				"name": "Terminal Operator",
+				"type": "varchar"
+			},
+			{
+				"name": "Berthage Tax",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "Harbour Dues Tax",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "Shipper Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Shipper City",
+				"type": "varchar"
+			},
+			{
+				"name": "Shipper Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Consignee Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Consignee City",
+				"type": "varchar"
+			},
+			{
+				"name": "Consignee Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Shipping Service Name",
+				"type": "varchar"
+			},
+			{
+				"name": "Measure",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Measure Units",
+				"type": "varchar"
+			},
+			{
+				"name": "Throughput Discount",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Wharfage Discount",
+				"type": "float",
+				"precision": 15
+			},
+			{
+				"name": "Harbour Dues Discount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Berthage Discount",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Sched Cargo Direction",
+				"type": "varchar"
+			},
+			{
+				"name": "Berthing Cargo",
+				"type": "varchar"
+			},
+			{
+				"name": "Billable Pier",
+				"type": "bit"
+			},
+			{
+				"name": "Vessel Type",
+				"type": "varchar"
+			},
+			{
+				"name": "Vessel Length",
+				"type": "real",
+				"precision": 7
+			},
+			{
+				"name": "Cargo Origin Port Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Origin Port City",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Destination Port Country",
+				"type": "varchar"
+			},
+			{
+				"name": "Cargo Destination Port City",
+				"type": "varchar"
+			},
+			{
+				"name": "Vessel Shipping Line",
+				"type": "varchar"
+			},
+			{
+				"name": "Home Based Vessel",
+				"type": "bit"
+			},
+			{
+				"name": "IMO Number",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Berth Dept",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "VesselSpreadsheet"
+		}
+	},
+	"type": "Microsoft.Synapse/workspaces/datasets"
+}
